@@ -2,3 +2,5 @@
 
 ## Answer:
 https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
+
+![Code](/DeskTop/networkDelay.png)
