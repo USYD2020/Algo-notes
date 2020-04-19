@@ -1,6 +1,6 @@
 # LeetCode 743. 网络延迟时间 
 
-## Answer:
+## Answer :hugs: :
 https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
 
 ```python
