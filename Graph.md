@@ -10,6 +10,7 @@ Dijkstra算法[以及延伸](https://www.cnblogs.com/thousfeet/p/9229395.html):
 [解法延伸阅读](https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/)
 
 基础实现O(N^2 + E）如下：
+思路：1 构建图，记录K到其他节点到距离 2遍历所有节点找出没有更新过且距离最短的节点 3更新这个节点的所有邻节点
 ```python
 class Solution(object):
     def networkDelayTime(self, times: List[List[int]], N: int, K: int) -> int:
@@ -42,6 +43,7 @@ class Solution(object):
         return  ans if ans < float('inf') else -1
 ```
 堆实现O(ElogE）如下：
+思路：1 构建图，记录K到其他节点到距离 2用PQ找出距离最短的（距离d，节点）元组 3更新这个节点到K的距离为d，更新该节点的所有邻节点
 ```python3
 import collections
 import heapq
