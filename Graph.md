@@ -1,6 +1,6 @@
 # Graph
 
-## LeetCode 743. 网络延迟时间
+## LeetCode 743. 【网络延迟时间】（https://leetcode-cn.com/problems/network-delay-time/）
 ### :smiley: To find the time taken for all nodes to receive the signal sourcing from K
 https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
 
