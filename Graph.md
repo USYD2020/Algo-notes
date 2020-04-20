@@ -78,3 +78,38 @@ class Solution(object):
                     heapq.heappush(pq, (d+d2, nei))
         return max(dist.values()) if len(dist) == N else -1
 ```
+## LeetCode 1135. [最小生成树](https://leetcode-cn.com/problems/connecting-cities-with-minimum-cost/) 
+
+:clinking_glasses:Prim思路如下：
+*         1. 根据 connections 记录每个顶点到其他顶点的权重，记为 edges 。
+          2. 使用 visited 记录所有被访问过的点。
+          3. 使用堆来根据权重比较所有的边。
+          4. 将任意一个点记为已访问，并将其所有连接的边放入堆中。
+          5. 从堆中拿出权重最小的边。
+          6. 如果已经访问过，直接丢弃。
+          7. 如果未访问过，标记为已访问，并且将其所有连接的边放入堆中，检查是否有 N 个点。
+          8. 重复操作 5。
+ ```python3
+    def minimumCost(self, N: int, connections: List[List[int]]) -> int:
+        #用数组的某个位置来对应某个出发点，相当于dictionary
+        edges = [[] for i in range(N + 1)]
+        for a, b, cost in connections:
+            edges[a].append((b, cost))
+            edges[b].append((a, cost))
+        intree = set()
+        # 存储可以向外扩展的边，格式为（开销，目的城市）
+        out_edges = [(0, 1)]
+        ans = 0
+        while out_edges and len(intree) != N:
+            cost, city = heapq.heappop(out_edges)
+            # 找出 有尚未访问节点 的权重最小边
+            if city not in intree:
+                intree.add(city)
+                ans += cost
+                # 将该节点的邻边加入堆中
+                for next_city, next_cost in edges[city]:
+                    heapq.heappush(out_edges, (next_cost, next_city))
+        if len(intree) != N:
+            return -1
+        return ans
+```
