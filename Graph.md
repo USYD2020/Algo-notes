@@ -13,7 +13,7 @@ Dijkstra算法[以及延伸](https://www.cnblogs.com/thousfeet/p/9229395.html):
 
 *        1. 构建图，记录K到其他节点的距离 2. 遍历所有节点找出【没有更新过且距离最短】的节点 3. 更新这个节点的所有邻节点
 
-时间复杂度O(N^2 + E）
+时间复杂度O(N^2 + E），常用语稠密图
 
 ```python
 class Solution(object):
@@ -49,7 +49,7 @@ class Solution(object):
 堆实现思路如下：
 *        1. 记录K到其他节点的距离 2. 用PQ找出【距离最短的（距离d，节点）元组】 3. 更新该节点到K的距离为d，更新该节点的所有邻节点
 
-时间复杂度O(ElogE）
+时间复杂度O(ElogE），常用于稀疏图
 ```python3
 import collections
 import heapq
