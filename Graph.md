@@ -113,3 +113,33 @@ class Solution(object):
             return -1
         return ans
 ```
+:clinking_glasses:Kruskal算法=并查集+贪心     思路如下：
+*         1. 将所有的边按照权重从小到大排序。
+          2. 取一条权重最小的边。
+          3. 使用并查集（union-find）数据结构来判断加入这条边后是否会形成环。若不会构成环，则将这条边加入最小生成树中。
+          4. 检查所有的结点是否已经全部联通，这一点可以通过目前已经加入的边的数量来判断。若全部联通，则结束算法；否则返回步骤 2.
+
+```python3
+def minimumCost(self, N: int, connections: List[List[int]]) -> int:
+        p = [i for i in range(N + 1)]       #并查集初始化
+        connections.sort(key = lambda x: x[2])      #按边的长度升序排序，贪心初始化
+        
+        def f(x):       #查找修改所属集合
+            if p[x] != x:
+                p[x] = f(p[x])
+            return p[x]
+
+        count = 0
+        ans = 0
+        for x, y, c in connections:
+            px, py = f(x), f(y)
+            if px != py:        #属于不同集合的时候，累加值里添加上边的长度，并且合并集合
+                count += 1
+                ans += c
+                if count == N - 1:      #添加了足够的点，就返回
+                    return ans
+                p[px] = py
+
+        return -1
+```
+
