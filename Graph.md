@@ -46,7 +46,7 @@ class Solution(object):
         ans = max(dist[1:])
         return  ans if ans < float('inf') else -1
 ```
-:clinking_glasses:堆实现思路如下：
+:clinking_glasses:堆优化实现思路如下：
 *        1. 记录K到其他节点的距离 2. 用PQ找出【距离最短的（距离d，节点）元组】 3. 更新该节点到K的距离为d，更新该节点的所有邻节点
 
 时间复杂度O(ElogE），常用于稀疏图
