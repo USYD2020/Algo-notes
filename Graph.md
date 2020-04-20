@@ -2,13 +2,13 @@
 
 ## LeetCode 743. [网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/)
 ### :smiley: To find the time taken for all nodes to receive the signal sourcing from K
-Dijkstra算法:
-*        1. 所有结点分为两部分：已确定最短路的结点集合P、未知最短路的结点集合Q。最开始，P中只有源点这一个结点。（可用一个book数组来维护是否在P中）
+Dijkstra算法[以及延伸](https://www.cnblogs.com/thousfeet/p/9229395.html):
+*        1. 所有结点分为两部分：已确定最短路的结点集合P、未知最短路的结点集合Q。最开始，P中只有源点这一个结点。（可用一个visited数组来维护是否在P中）
          2. 在Q中选取一个离源点最近的结点u（dis[u]最小）加入集合P。然后考察u的所有出边，做松弛操作。
          3. 重复第二步，直到集合Q为空。最终dis数组的值就是源点到所有顶点的最短路。
          
 https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
-
+基础实现O(N^2 + E）如下：
 ```python
 class Solution(object):
     def networkDelayTime(self, times: List[List[int]], N: int, K: int) -> int:
@@ -39,4 +39,8 @@ class Solution(object):
         #dist[0] is irrelevant as 'inf'
         ans = max(dist[1:])
         return  ans if ans < float('inf') else -1
+```
+堆实现O(ElogE）如下：
+```python3
+return True
 ```
