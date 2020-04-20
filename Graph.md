@@ -47,7 +47,7 @@ import collections
 import heapq
 class Solution(object):
     '''
-    Dijkstra 的堆实现, O(ElogE),因为每个边都可能添加到堆中
+    Dijkstra implementation using PQ, O(ElogE), as all edges are pushed into the PQ
     '''
     def networkDelayTime(self, times, N, K):
         graph = collections.defaultdict(list)
