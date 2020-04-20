@@ -13,7 +13,7 @@ Dijkstra算法[以及延伸](https://www.cnblogs.com/thousfeet/p/9229395.html):
 
 *        1. 构建图，记录K到其他节点的距离 2. 遍历所有节点找出【没有更新过且距离最短】的节点 3. 更新这个节点的所有邻节点
 
-时间复杂度O(N^2 + E），常用语稠密图
+时间复杂度O(N^2 + E），常用于稠密图
 
 ```python
 class Solution(object):
