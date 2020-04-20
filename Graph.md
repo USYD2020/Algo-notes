@@ -7,7 +7,8 @@ Dijkstra算法[以及延伸](https://www.cnblogs.com/thousfeet/p/9229395.html):
          2. 在Q中选取一个离源点最近的结点u（dis[u]最小）加入集合P。然后考察u的所有出边，做松弛操作。
          3. 重复第二步，直到集合Q为空。最终dis数组的值就是源点到所有顶点的最短路。
          
-https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/
+[解法延伸阅读](https://leetcode-cn.com/problems/network-delay-time/solution/dan-yuan-zui-duan-lu-po-su-de-dijkstra-dui-you-hua/)
+
 基础实现O(N^2 + E）如下：
 ```python
 class Solution(object):
@@ -42,5 +43,30 @@ class Solution(object):
 ```
 堆实现O(ElogE）如下：
 ```python3
-return True
+import collections
+import heapq
+class Solution(object):
+    '''
+    Dijkstra 的堆实现, O(ElogE),因为每个边都可能添加到堆中
+    '''
+    def networkDelayTime(self, times, N, K):
+        graph = collections.defaultdict(list)
+        for u, v, w in times:
+            graph[u].append((v, w))
+        # use distance to sort
+        pq = [(0, K)]
+        dist = {}
+        while pq:
+             # find the globally nearest node
+            d, node = heapq.heappop(pq)
+            print(d,node)
+             # find the nearest unvisited node 
+            if node in dist: continue
+            # Remember to update dist
+            dist[node] = d
+            # update neighbors' distance to K
+            for nei, d2 in graph[node]:
+                if nei not in dist:
+                    heapq.heappush(pq, (d+d2, nei))
+        return max(dist.values()) if len(dist) == N else -1
 ```
