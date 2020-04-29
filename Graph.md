@@ -161,15 +161,12 @@ def get_all_paths(self, start, finish, radius_limit):
         def dfs(u, path):
             # Mark the current node as visited and store in path
             path.append(u)
+            
             if u == finish:
                 # === IMPORTANT to add a DEEPCOPY as path would remove u later ===
-                all_paths.append(path[:])
             else:
-                neighbors = [self.opposite(e, u) for e in u.edges]
                 # Recur for all the vertices adjacent to this vertex
-                for neighbor in neighbors:
-                    if neighbor not in path and self.distance(neighbor, start) <= radius_limit:
-                        dfs(neighbor, path)
+                
             # Remove current vertex from path and mark it as unvisited
             path.remove(u)
 
