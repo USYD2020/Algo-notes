@@ -149,12 +149,13 @@ def minimumCost(self, N: int, connections: List[List[int]]) -> int:
         return -1
 ```
 
-## 如何找到两点之间的所有paths,且保证path上的所有点离源点不超过radius
+## 如何找到两点之间的所有paths
 :clinking_glasses:DFS     思路如下：
 *         1. 从源点出发做DFS，特别注意找到的path必须是Deepcopy,每次dfs结束时记得mark as unvisted
           2. 邻接表表示时，查找所有顶点的邻接点所需时间为O(E)，访问顶点的邻接点所花时间为O（V）,总的时间复杂度为O(V+E)。
 ```python3
 def get_all_paths(self, start, finish, radius_limit):
+        '''radius_limit用于保证path上的所有点离源点不超过radius'''
         all_paths = []
 
         # recursive dfs to find all paths from 'b' to 's'
