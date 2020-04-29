@@ -155,7 +155,9 @@ def minimumCost(self, N: int, connections: List[List[int]]) -> int:
           2. 邻接表表示时，查找所有顶点的邻接点所需时间为O(E)，访问顶点的邻接点所花时间为O（V）,总的时间复杂度为O(V+E)。
 ```python3
 def get_all_paths(self, start, finish, radius_limit):
-        '''radius_limit用于保证path上的所有点离源点不超过radius'''
+        '''
+        radius_limit用于额外要求path上的所有点离源点不超过radius
+        '''
         all_paths = []
 
         # recursive dfs to find all paths from 'b' to 's'
