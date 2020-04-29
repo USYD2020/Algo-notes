@@ -162,7 +162,6 @@ def get_all_paths(self, start, finish, radius_limit):
             # Mark the current node as visited and store in path
             path.append(u)
             if u == finish:
-                # print(path)
                 # === IMPORTANT to add a DEEPCOPY as path would remove u later ===
                 all_paths.append(path[:])
             else:
