@@ -149,3 +149,32 @@ def minimumCost(self, N: int, connections: List[List[int]]) -> int:
         return -1
 ```
 
+## 如何找到两点之间的所有paths,且保证path上的所有点离源点不超过radius
+:clinking_glasses:DFS     思路如下：
+*         1. 从源点出发做DFS，特别注意找到的path必须是Deepcopy,每次dfs结束时记得mark as unvisted
+          时间复杂度O(mlogm
+```python3
+def get_all_paths(self, start, finish, radius_limit):
+        all_paths = []
+
+        # recursive dfs to find all paths from 'b' to 's'
+        def dfs(u, path):
+            # Mark the current node as visited and store in path
+            path.append(u)
+            if u == finish:
+                # print(path)
+                # === IMPORTANT to add a DEEPCOPY as path would remove u later ===
+                all_paths.append(path[:])
+            else:
+                neighbors = [self.opposite(e, u) for e in u.edges]
+                # Recur for all the vertices adjacent to this vertex
+                for neighbor in neighbors:
+                    if neighbor not in path and self.distance(neighbor, start) <= radius_limit:
+                        dfs(neighbor, path)
+            # Remove current vertex from path and mark it as unvisited
+            path.remove(u)
+
+        one_path = []
+        dfs(start, one_path)
+        return all_paths
+```
