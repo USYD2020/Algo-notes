@@ -5,8 +5,10 @@
 * 时间复杂度：O(nlogn)
 * 空间复杂度：快速排序使用递归，递归使用栈，因此它的空间复杂度为O(logn)
 * 稳定性：快速排序无法保证相等的元素的相对位置不变，因此它是不稳定的排序算法
+[其他排序](https://mp.weixin.qq.com/s/vn3KiV-ez79FmbZ36SX9lg)[参考图解](https://www.jianshu.com/p/a68f72278f8f)
 ```java
 import java.util.Arrays;
+
 public class QuickSort {
 
     public int[] sort(int[] sourceArray) {
@@ -43,7 +45,30 @@ public class QuickSort {
         return index;
     }
 
-    private void swap(int[] arr, int i, int j) {
+    /**
+     * 分区的过程，整数数组 arr 的[L, R]部分上，使得： 大于 arr[R] 的元素位于[L, R]部分的右边，但这部分数据不一定有序 小于
+     * arr[R] 的元素位于[L, R]部分的左边，但这部分数据不一定有序 等于 arr[R] 的元素位于[L, R]部分的中间
+     * 返回等于部分的第一个元素的下标和最后一个下标组成的整数数组
+     */
+    public static int[] partitionAlternative(int[] arr, int L, int R) {
+
+        int basic = arr[R];
+        int less = L ;
+        int more = R ;
+        while (L < more) {
+            if (arr[L] < basic) {
+                swap(arr, less++, L++);
+            } else if (arr[L] > basic) {
+                swap(arr, more--, L);
+            } else {
+                L++;
+            }
+        }
+        //注意return的是数组
+        return new int[] { less, more };
+    }
+
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
