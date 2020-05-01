@@ -28,53 +28,23 @@ public class QuickSort {
         return arr;
     }
 
-    private int partition(int[] arr, int left, int right) {
+    private int partition(int[] A, int left, int right) {
         // 设定基准值（pivot）
-        int pivot = right;
+        int pivot = A[left];
         // 从左边开始数起
-        int index = left;
-        for (int i = index; i <= right; i++) {
-            // 遍历将小于pivot的数都移到左边，大于pivot的数都移动到右边
-            if (arr[i] < arr[pivot]) {
-                swap(arr, i, index);
-                // 让index指向第一个大于等于pivot的数，将这个数与pivot互换
-                index++;
+        while(left<right){
+            // 小于等于pivot的数都移动到左边，即是从右找到第一个小于等于pivot的数与left互换
+            while(left<right && A[right] > pivot) right--;
+            A[left] = A[right];
+            // 大于pivot的数都移动到右边，即是从左找到第一个大于pivot的数与right互换
+            while(left<right && A[left] <= pivot) left++;
+            A[right] = A[left];
             }
-        }
-        // index指向第一个大于等于pivot的数，将这个数与pivot互换
-        swap(arr, pivot, index);
-        return index;
+        // 此时left==right，都指向第一个大于pivot的数，将这个数（即loop里最后一个A[left]）与pivot互换
+       A[left] = pivot;
+       return left;
     }
-
-    /**
-     * 分区的过程，整数数组 arr 的[L, R]部分上，使得： 大于 arr[R] 的元素位于[L, R]部分的右边，但这部分数据不一定有序 小于
-     * arr[R] 的元素位于[L, R]部分的左边，但这部分数据不一定有序 等于 arr[R] 的元素位于[L, R]部分的中间
-     * 返回等于部分的第一个元素的下标和最后一个下标组成的整数数组
-     */
-    public static int[] partitionAlternative(int[] arr, int L, int R) {
-
-        int basic = arr[R];
-        int less = L ;
-        int more = R ;
-        while (L < more) {
-            if (arr[L] < basic) {
-                swap(arr, less++, L++);
-            } else if (arr[L] > basic) {
-                swap(arr, more--, L);
-            } else {
-                L++;
-            }
-        }
-        //注意return的是数组
-        return new int[] { less, more };
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
+    
     public static void main(String[] args) {
         QuickSort qs = new QuickSort();
         int[] arr = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
@@ -84,6 +54,5 @@ public class QuickSort {
         System.out.println(Arrays.toString(qs.sort(arrEqual)));
         System.out.println(Arrays.toString(qs.sort(arrComplex)));
     }
-
 }
 ```
