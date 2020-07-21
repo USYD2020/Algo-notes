@@ -11,10 +11,11 @@
 3 复习：根据笔记思路转换为代码，手写或重打。
 
 ## 刷题辅助
-1 [刷题入门视频](https://www.bilibili.com/video/BV1vC4y1W78Y)
-2 [最快刷题路径](https://greyireland.gitbook.io/algorithm-pattern/)
-3 [最易懂的题解](https://liweiwei1419.gitee.io/leetcode-algo/leetcode-by-tag/backtracking/)
-4 [最秀的路径总结](https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie)
+1. [刷题入门视频](https://www.bilibili.com/video/BV1vC4y1W78Y)
+2. [最快刷题路径](https://greyireland.gitbook.io/algorithm-pattern/)
+3. [最易懂的题解](https://liweiwei1419.gitee.io/leetcode-algo/leetcode-by-tag/backtracking/)
+4. [最秀的路径总结](https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie)
+5. [最全的谷歌面试指南](https://github.com/merelydust/coding-interview-university/blob/master/translations/README-cn.md)
 
 ## 刷题心态
 1. 从薄到厚。先用薄教材入门，再找“厚”教材，细细体会其中的细节。
