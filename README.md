@@ -14,7 +14,7 @@
 ## 刷题辅助
 1. [刷题入门视频](https://www.bilibili.com/video/BV1vC4y1W78Y)
 2. [最快刷题路径](https://greyireland.gitbook.io/algorithm-pattern/)
-3. [最易懂的题解](https://liweiwei1419.gitee.io/leetcode-algo/leetcode-by-tag/backtracking/)
+3. [最易懂的题解](https://github.com/liweiwei1419/LeetCode-Solutions-in-Good-Style/blob/master/README.md)
 4. [最秀的路径总结](https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie)
 5. [最全的谷歌面试指南](https://github.com/merelydust/coding-interview-university/blob/master/translations/README-cn.md)
 
