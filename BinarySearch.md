@@ -1,6 +1,6 @@
-# [35 搜索插入位置] (https://leetcode-cn.com/problems/search-insert-position/)
+## 35 [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-```
+```python3
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         # 找到有几个数比target小，用二分模版 闭区间
@@ -22,9 +22,9 @@ class Solution:
         elif nums[end] < target:
             return end + 1
 ```
-# [34. 在排序数组中查找元素的第一个和最后一个位置][https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/]
+## 34. [在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 可以用mid模版写，记得收缩方向对，最后分类讨论即可
-```
+``` python3
 class Solution:
     def searchRange(self, nums, target):
         if not nums:
@@ -62,7 +62,7 @@ class Solution:
         return [left, right]
 ```
 也可以用二分查找常用+1或-1的模版，找出第一个位置和最后一个位置，但是寻找的方法有所不同，需要实现两个二分查找。我们将寻找 target 最后一个位置，转换成寻找 target+1 第一个位置，再往前移动一个位置。这样我们只需要实现一个二分查找代码即可。
-```
+``` java
 public int[] searchRange(int[] nums, int target) {
     int first = findFirst(nums, target);
     int last = findFirst(nums, target + 1) - 1;
