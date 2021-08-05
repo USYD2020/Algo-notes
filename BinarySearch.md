@@ -1,3 +1,63 @@
+# 二分查找
+常见 左闭右闭区间，初始值为0, nums.length - 1，while用小于等于
+```java
+public int binarySearch(int[] nums, int key) {
+    int l = 0, h = nums.length - 1;
+    while (l <= h) {
+        int m = l + (h - l) / 2;
+        if (nums[m] == key) {
+            return m;
+        } else if (nums[m] > key) {
+            h = m - 1;
+        } else {
+            l = m + 1;
+        }
+    }
+    return -1;
+}
+```
+
+变种： 在一个有重复元素的数组中查找 key 的最左位置， 
+* 运用左闭右开，初始值为0, nums.length，while用小于
+* h 的赋值表达式为 h = m
+* 循环条件为 l < h
+* 最后返回 l 而不是 -1
+
+``` java
+public int binarySearch(int[] nums, int key) {
+    int l = 0, h = nums.length;
+    while (l < h) {
+        int m = l + (h - l) / 2;
+        if (nums[m] >= key) {
+            h = m;
+        } else {
+            l = m + 1;
+        }
+    }
+    return l;
+}
+```
+
+为了减少+1和-1的麻烦，运用一下模版，固定使用：
+* l, h = 0, len(nums)-1
+* while l + 1 < h:
+
+``` python
+# 找到第一个位置，收缩右边界
+        l, h = 0, len(nums)-1
+        while l + 1 < h:
+            m = l + (h-l)//2
+            # 关键点：等于时依然收缩右边界
+            if nums[m] >= target:
+                h = m
+            else:
+                l = m
+        if nums[l] == target:
+            left = l
+        elif nums[h] == target:
+            left = h
+```
+
 ## 35 [搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
 ```python3
