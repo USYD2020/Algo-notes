@@ -1,5 +1,5 @@
 # 二分查找
-常见 左闭右闭区间，初始值为0, nums.length - 1，while用小于等于
+常见 **左闭右闭**区间，初始值为0, nums.length - 1，while用小于等于
 ```java
 public int binarySearch(int[] nums, int key) {
     int l = 0, h = nums.length - 1;
@@ -17,8 +17,7 @@ public int binarySearch(int[] nums, int key) {
 }
 ```
 
-变种： 在一个有重复元素的数组中查找 key 的最左位置， 
-* 运用左闭右开，初始值为0, nums.length，while用小于
+变种： 运用**左闭右开**，初始值为0, nums.length，while用小于. 在一个有重复元素的数组中查找 key 的最左位置， 
 * h 的赋值表达式为 h = m
 * 循环条件为 l < h
 * 最后返回 l 而不是 -1
