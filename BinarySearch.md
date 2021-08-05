@@ -86,3 +86,23 @@ private int findFirst(int[] nums, int target) {
     return l;
 }
 ```
+## [山脉序列中的最大值](https://www.lintcode.com/problem/585)
+给 n 个整数的山脉数组，即先增后减的序列，找到山顶（最大值）。
+``` python
+class Solution:
+    """
+    @param nums: a mountain sequence which increase firstly and then decrease
+    @return: then mountain top
+    """
+    def mountainSequence(self, nums):
+        # 找到最后一个使得 A[mid-1] < mid
+        # 使用闭区间二分模版
+        start, end = 0, len(nums)-1
+        while start + 1 < end:
+            mid = start + (end - start)//2
+            if nums[mid-1] < nums[mid]:
+                end = mid
+            else:
+                start = mid
+        return max(nums[start], nums[end])
+```
