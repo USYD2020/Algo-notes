@@ -1,4 +1,15 @@
 # 二分查找
+
+<!-- GFM-TOC -->
+* [Leetcode 题解 - 二分查找](#leetcode-题解---二分查找)
+    * [1. 求开方](#1-求开方)
+    * [2. 大于给定元素的最小元素](#2-大于给定元素的最小元素)
+    * [3. 有序数组的 Single Element](#3-有序数组的-single-element)
+    * [4. 第一个错误的版本](#4-第一个错误的版本)
+    * [5. 旋转数组的最小数字](#5-旋转数组的最小数字)
+    * [6. 查找区间](#6-查找区间)
+<!-- GFM-TOC -->
+
 常见 **左闭右闭**区间，初始值为0, nums.length - 1，while用小于等于
 ```java
 public int binarySearch(int[] nums, int key) {
