@@ -206,3 +206,26 @@ class Solution:
                 start = mid
         return max(nums[start], nums[end])
 ```
+## 744. [寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/![image](https://user-images.githubusercontent.com/30612175/128438853-a96e5cb7-ac35-4506-a66c-734f8f495dbc.png)
+)
+
+```python
+class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        # 注意初始值
+        start, end = 0, len(letters) - 1
+        # 运用模版
+        while start + 1 < end:
+            mid = start + (end - start)//2
+            if letters[mid] <= target:
+                start = mid
+            else:
+                end = mid
+        # 注意越界情况
+        if letters[start] > target:
+            return letters[start]
+        elif letters[end] > target:
+            return letters[end]
+        else:
+            return letters[0]
+            ```
