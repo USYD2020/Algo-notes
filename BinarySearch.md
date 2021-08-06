@@ -216,6 +216,7 @@ class Solution:
         # 运用模版
         while start + 1 < end:
             mid = start + (end - start)//2
+            # 需要大于给定字母，所以等于时也收缩左边界
             if letters[mid] <= target:
                 start = mid
             else:
