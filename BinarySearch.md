@@ -206,8 +206,7 @@ class Solution:
                 start = mid
         return max(nums[start], nums[end])
 ```
-## 744. [寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/![image](https://user-images.githubusercontent.com/30612175/128438853-a96e5cb7-ac35-4506-a66c-734f8f495dbc.png)
-)
+## 744. [寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/)
 
 ```python
 class Solution:
