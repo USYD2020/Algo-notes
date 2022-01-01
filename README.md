@@ -12,10 +12,10 @@
 3. 复习：根据笔记思路转换为代码，手写或重打。
 
 ## 刷题辅助
-1. [刷题入门视频](https://www.bilibili.com/video/BV1vC4y1W78Y)
+1. [刷题入门视频](https://www.bilibili.com/video/BV1ta4y1H7wX?from=search&seid=6905135933363712971&spm_id_from=333.337.0.0)
 2. [最快刷题路径](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20题解%20-%20目录.md)
-3. [最易懂的题解](https://github.com/liweiwei1419/LeetCode-Solutions-in-Good-Style/blob/master/README.md)
-4. [最秀的路径总结](https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie)
+3. [最秀的路径总结](https://labuladong.gitbook.io/algo/di-ling-zhang-bi-du-xi-lie)
+4. [最易懂的题解](https://github.com/liweiwei1419/LeetCode-Solutions-in-Good-Style/blob/master/README.md)
 5. [最全的谷歌面试指南](https://github.com/merelydust/coding-interview-university/blob/master/translations/README-cn.md)
 
 ## 刷题心态
